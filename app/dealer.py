@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 from utils import calculate_pmt
 from typing import Tuple, List
+import warnings
+warnings.filterwarnings('ignore')
 
 st.set_page_config(page_title="SFM Dealer Portal", layout="wide")
 col1, col2, col3 = st.columns(3)
@@ -18,7 +20,7 @@ st.markdown(hide_default_format,unsafe_allow_html=True)
 
 st.title('RTO Deal Builder')
 
-tab1, tab2, tab3 = st.tabs(['1. Customer Information','2. Trailer Information','3. Contract Information'])
+tab1, tab2, tab3, tab4 = st.tabs(['1. Customer Information','2. Trailer Information','3. Contract Information', '4. Document Uploads'])
 
 # Initialize a dictionary to store the inputs
 @st.cache_data
@@ -123,3 +125,7 @@ with tab3:
         x.index.name = 'Trailer Price'
         st.write(x)
     
+with tab4:
+    tab4.file_uploader('Upload Applicant Docs')
+    if tab4.button('Submit'):
+        tab4.write('Thank you. The deal is currently being reviewed. A Sterling Financial Management Representative will be in touch shortly')
