@@ -4,10 +4,21 @@ from utils import calculate_pmt
 from typing import Tuple, List
 import warnings
 warnings.filterwarnings('ignore')
+import os
+import streamlit as st
 
 st.set_page_config(page_title="SFM Dealer Portal", layout="wide")
 col1, col2, col3 = st.columns(3)
-col1.image('pics/_Logo_2.png',use_column_width=True)
+
+logo_filename = '_Logo_2.png'
+logo_path = os.path.join(os.path.dirname(__file__), 'pics', logo_filename)
+
+if os.path.exists(logo_path):
+    col1.image(logo_path, use_column_width=True)
+else:
+    st.write('Logo file not found.')
+
+# col1.image('pics/_Logo_2.png',use_column_width=True)
 
 hide_default_format = """
        <style>
