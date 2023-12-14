@@ -129,3 +129,8 @@ with tab4:
     tab4.file_uploader('Upload Applicant Docs')
     if tab4.button('Submit'):
         tab4.write('Thank you. The deal is currently being reviewed. A Sterling Financial Management Representative will be in touch shortly')
+
+
+# NOTE --> ADD CHECK LIST to submit it. 
+
+# NOTE: create dealer subdomain. 
