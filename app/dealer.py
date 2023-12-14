@@ -79,6 +79,8 @@ with tab1:
         input_data['cell_phone'] = st.text_input('Cell Phone',value='')
         input_data['employer'] = st.text_input('Name of Employer',value='')
         input_data['employer_phone'] = st.text_input('Employer Phone',value='')
+        input_data['job_title'] = st.text_input('Job Title',value='')
+        input_data['time_on_job'] = st.text_input('Time on Job',value='')
 
 # Sample verification run
 show_verification_button = False
